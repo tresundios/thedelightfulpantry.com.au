@@ -105,8 +105,8 @@ class Delight_Lead_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function register_delight_lead_shortcode() {
-		add_shortcode( 'delight_lead_form', array( $this, 'delight_lead_shortcode' ) );
+	public function register_delight_lead_form_shortcode() {
+		add_shortcode( 'delight_lead_form', array( $this, 'delight_lead_form_callback' ) );
 	}
 
 	/**
@@ -116,7 +116,7 @@ class Delight_Lead_Public {
 	 * @param    array    $atts       Shortcode attributes.
 	 * @return   string               The HTML output.
 	 */
-	public function delight_lead_shortcode( $atts ) {
+	public function delight_lead_form_callback( $atts ) {
 		return '<h1>Hello World</h1>';
 	}
 
