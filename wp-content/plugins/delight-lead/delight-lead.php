@@ -13,9 +13,9 @@
  * @package           Delight_Lead
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Plugin Boilerplate
+ * Plugin Name:       Delight Lead
  * Plugin URI:        http://example.com/delight-lead-uri/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This is a deight lead plugin and it bring all the information realated the The Delightful Pantry Business.
  * Version:           1.0.0
  * Author:            Your Name or Your Company
  * Author URI:        http://example.com/
