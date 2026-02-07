@@ -30,7 +30,34 @@ class Delight_Lead_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'delight_lead_feedback';
+		
+		$charset_collate = $wpdb->get_charset_collate();
 
+		$sql = "CREATE TABLE $table_name (
+			id mediumint(9) NOT NULL AUTO_INCREMENT,
+			syrup_tried varchar(50) NOT NULL,
+			preferred_syrup varchar(50) NOT NULL,
+			flavor_descriptors text NOT NULL,
+			other_flavor text,
+			home_usage varchar(50) NOT NULL,
+			other_usage text,
+			buying_interest varchar(20) NOT NULL,
+			price_range varchar(20) NOT NULL,
+			suggestions text,
+			join_founding_tasters varchar(10) NOT NULL,
+			taster_name varchar(100),
+			taster_email varchar(100),
+			created_at datetime DEFAULT CURRENT_TIMESTAMP,
+			PRIMARY KEY  (id)
+		) $charset_collate;";
+
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+		dbDelta( $sql );
+		
+		// Create default options for admin emails
+		add_option('delight_lead_admin_emails', '');
 	}
 
 }

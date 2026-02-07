@@ -156,6 +156,8 @@ class Delight_Lead {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menus' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
 
 	}
 
@@ -173,6 +175,8 @@ class Delight_Lead {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_public, 'register_delight_lead_form_shortcode' );
+		$this->loader->add_action( 'init', $plugin_public, 'handle_form_submission' );
+		$this->loader->add_action( 'init', $plugin_public, 'register_ajax_actions' );
 
 	}
 
